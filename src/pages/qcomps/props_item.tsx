@@ -3,7 +3,7 @@ import { ItemProps } from "@/types/item";
 function Item({ name, isPacked } : ItemProps) {
   return (
     <li className="item">
-      {name}
+        {isPacked ? <del>{name}</del> : name}
     </li>
   );
 }

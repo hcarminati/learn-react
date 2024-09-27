@@ -1,3 +1,4 @@
+
 export const recipes = [{
   id: 'greek-salad',
   name: 'Greek Salad',
@@ -13,10 +14,20 @@ export const recipes = [{
 }];
 
 export default function RecipeList() {
+  const recipesItems = recipes.map(recipe =>
+      <li>
+        <h1>{recipe.name}</h1>
+        <ul>
+          {[...recipe.ingredients].map((ingredient, index) => (
+              <li>{ingredient}</li>
+          ))}
+        </ul>
+      </li>
+  );
   return (
     <div>
       <h1>Recipes</h1>
-      {}
+      <ul>{recipesItems}</ul>
     </div>
   );
 }
